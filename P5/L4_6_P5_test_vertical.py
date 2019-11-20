@@ -9,6 +9,10 @@ def test_flip_vertical():
     Tests the flip_vertical() function. Returns True if passed, False if failed.
     Created by Zeyad Bakr.
     Student # 101142932, Group L4-6
+    >>>test_flip_vertical()
+    True
+    >>>test_flip_vertical()
+    False
     Cases:
     (0, 0, 0)       -> (255, 0, 0)
     (128, 128, 128) -> (0, 255, 0)
