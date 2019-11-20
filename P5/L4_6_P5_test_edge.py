@@ -1,6 +1,9 @@
 from Cimpl import *
 from L4_6_P5_edge import *
 
+# Milestone 2, P5. Group L4-6.
+# Submitted 20/11/19, created by Zeyad Bakr.
+
 def test_edge():
     """
     Tests the edge_detection() function. Returns True if it passes, False otherwise.
