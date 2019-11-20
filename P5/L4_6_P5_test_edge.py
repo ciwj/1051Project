@@ -9,6 +9,10 @@ def test_edge():
     Tests the edge_detection() function. Returns True if it passes, False otherwise.
     Created by Zeyad Bakr.
     Student # 101142932, Group L4-6
+    >>> edge_detection(image, 128)
+    True
+    >>>edge_detection(image, 212)
+    False
     Cases:
     >>> edge_detection(image, 128)
     Top pixel     Bottom pixel      Result
