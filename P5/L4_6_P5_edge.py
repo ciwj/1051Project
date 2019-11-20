@@ -1,9 +1,8 @@
 from Cimpl import *
 import math
-#Milstone 2, P5. Group L4-6
-#Submitted 20/11/19, created by Navin Kangal
 
-oldImage = load_image(choose_file())
+#Milestone 2, P5. Group L4-6
+#Submitted 20/11/19, created by Navin Kangal
 
 def detect_edges(oldImage: Image, threshold: int):
     """
