@@ -1,5 +1,7 @@
 from Cimpl import *
 
+# Milestone 2, P5. Group L4-6.
+# Submitted 20/11/19, created by Zeyad Bakr.
 
 def flip_horizontal(oldImage):
     """
