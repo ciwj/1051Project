@@ -1,10 +1,10 @@
 from Cimpl import *
 
-# Milestone 1, P2. Group L4-6.
+# Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
-def red_channel(oldImage):
+def red_channel(oldImage: Image):
     """
     Takes an image, and sets the green and blue channels to 0.
     Returns an image with only the red channel present.
