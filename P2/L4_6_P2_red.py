@@ -1,6 +1,6 @@
 from Cimpl import *
 
-# Milestone 2, P5. Group L4-6.
+# Milestone 1, P2. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
