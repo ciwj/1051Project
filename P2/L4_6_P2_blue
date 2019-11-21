@@ -1,12 +1,11 @@
-from Cimpl import *
-from L4_6_P2_blue import *
-
-def test_blue(new_image):
-    """tests function to see if only blue channel is present; prints 'failed' if test failed and 'passed' if test passed. Created by Callum Ullrich.
+def blue_channel(original_image):
+    """Takes an image, and sets the green and red channels to 0. Returns an image with only the blue channel present. Parameter is a Cimpl.Image object and a Cimpl.Image object is returned. Created by Callum Ullrich.
     """
-    chillin = True
-    for pixel in new_image:
+    new_image = copy(original_image)
+    for pixel in original_image:
         x, y, (r, g, b) = pixel 
-        if not r == 0 and g == 0:
-            chillin = False
-    return chillin
+        new_colour = create_color(0,0,b)  # Set the pixels to only the blue channels
+        set_color(new_image, x, y, new_colour)
+    
+    show(new_image)
+    return new_image
