@@ -1,5 +1,9 @@
 from Cimpl import *
-from L4_6_P4_sepia import *
+from L4_6_P4_sepia import sepia
+
+# Milestone 2, P5. Group L4-6.
+# Submitted 20/11/19, created by Zeyad Bakr.
+
 
 def test_sepia():
     """
@@ -31,4 +35,4 @@ def test_sepia():
             isCorrect = False
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
     
-    return isCorrect 
+    return isCorrect
