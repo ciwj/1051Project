@@ -1,20 +1,21 @@
 from Cimpl import *
-from L4_6_P5_edge import *
+from L4_6_P5_edge import detect_edges
 
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
+
 def test_edge():
     """
-    Tests the edge_detection() function. Returns True if it passes, False otherwise.
+    Tests the edge_detection() function.
+    Returns True if it passes, False otherwise.
     Created by Zeyad Bakr.
     Student # 101142932, Group L4-6
-    >>> edge_detection(image, 128)
-    True
-    >>>edge_detection(image, 212)
-    False
     Cases:
-    >>> edge_detection(image, 128)
+    >>> test_edge()
+    True
+    >>>test_edge()
+    False
     Top pixel     Bottom pixel      Result
     (0, 0, 0)       + (255, 255, 255) -> (255, 255, 255), (255, 255, 255)
     (0, 0, 0)       + (53, 64, 100)   -> (0, 0, 0), (255, 255, 255)
