@@ -1,11 +1,17 @@
 from Cimpl import *
 from L4_6_P4_twotonethreetone import three_tone
 
+# Milestone 2, P5. Group L4-6.
+# Submitted 20/11/19, created by Zeyad Bakr.
+
+
 def test_three_tone():
     """
-    Tests the three_tone() function. Returns True if successful, otherwise returns False
+    Tests the three_tone() function. Returns True if successful,
+    otherwise returns False.
     Created by Zeyad Bakr.
     Student #: 101142932, Group L4-6
+    >>> three_toned_img = three_tone(img, "white", "black", "red")
     Cases:
     (0, 0, 0) -> (0, 0, 0)
     (128, 0, 255) -> (0, 0, 0)
@@ -33,4 +39,4 @@ def test_three_tone():
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
             return False
     
-    return True   
+    return True
