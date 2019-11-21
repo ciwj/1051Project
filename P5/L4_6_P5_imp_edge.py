@@ -1,12 +1,15 @@
-from Cimpl import *
 import math
+from Cimpl import *
 
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
+
 def detect_edges_better(oldImage: Image, threshold: int):
     """
-    An improved version of the detect_edges function. Takes a Cimpl.Image object and a positive integer between 0-255, returns a Cimpl.Image object.
+    An improved version of the detect_edges function.
+    Takes a Cimpl.Image object and a positive integer between 0-255,
+    returns a Cimpl.Image object.
     Created by Zeyad Bakr.
     Student # 101142932, Group L4-6.
     >>> img1 = detect_edges_better(img, 200)
