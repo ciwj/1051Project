@@ -14,7 +14,7 @@ def flip_horizontal(oldImage: Image):
     image = copy(oldImage)
     
     for x, y, col in oldImage:
-        set_color(image, get_width(image) - (x + 1), y,  col)
+        set_color(image, x, get_height(image) - (y + 1),  col)
     
     show(image)
     return image
