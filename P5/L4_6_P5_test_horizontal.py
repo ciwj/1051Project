@@ -4,9 +4,12 @@ from L4_6_P5_horizontal import *
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Callum Ullrich.
 
+
 def test_flip_horizontal():
     """
-    Tests the flip_horizontal() function. Returns True if it passes, returns False otherwise.
+    Tests the flip_horizontal() function.
+    Returns True if it passes.
+    Returns False otherwise.
     Created by Callum Ullrich.
     Student # 101148042, Group L4-6
     >>>test_flip_horizontal()
@@ -21,7 +24,7 @@ def test_flip_horizontal():
     (255, 0, 0)     -> (0, 0, 0)
     """
     
-    isCorrect = True
+    is_correct = True
     img = create_image(1, 5)
     
     set_color(img, 0, 0,  create_color(0, 0, 0))
@@ -43,7 +46,7 @@ def test_flip_horizontal():
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
-            isCorrect = False
+            is_correct = False
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
     
-    return isCorrect
+    return is_correct
