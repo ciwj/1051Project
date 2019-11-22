@@ -1,38 +1,58 @@
 from Cimpl import *
-from L4_6_P4_posterize import posterize
+from L4_6_P4_posterize import posterize, _adjust_component
 
-
-def posterize_test(image):
-    """Tests image to see if image is posterized. Parameter should be posterize_test(posterize(load_image(choose_file()))) in order to select a posterized image. Prints "passed" if test passed and "failed" if test failed. Created by Callum Ullrich.
+def test_posterize():
     """
-    posterizedimage = copy(image)
-    for pixel in posterizedimage:
-        chillin = True
-        (x, y, (r, g, b)) = pixel
-        if r >= 0 and r <= 63 and r != 31:
-            chillin = False 
-        if r >= 64 and r <= 127 and r != 95:
-            chillin = False       
-        if r >= 128 and r <= 191 and r != 159:
-            chillin = False         
-        if r >= 192 and r <= 255 and r != 223:
-            chillin = False 
-      
-        if g >= 0 and g <= 63 and g != 31:
-            chillin = False 
-        if g >= 64 and g <= 127 and g != 95:
-            chillin = False       
-        if g >= 128 and g <= 191 and g != 159:
-            chillin = False         
-        if g >= 192 and g <= 255 and g != 223:
-            chillin = False 
-            
-        if b >= 0 and b <= 63 and b != 31: 
-            chillin = False 
-        if b >= 64 and b <= 127 and b != 95:
-            chillin = False       
-        if b >= 128 and b <= 191 and b != 159:
-            chillin = False         
-        if b >= 192 and b <= 255 and b != 223:
-            chillin = False
-        return chillin
+    Tests the posterize() function. Returns True if it passes, returns False otherwise.
+    Created by Callum Ullrich.
+    Student # 101148042, Group L4-6
+    >>>test_posterize()
+    True
+    >>>test_posterize()
+    False
+    Cases:
+    (67, 190, 0)    -> (95, 159, 31)
+    (128, 143, 222) -> (159, 159, 223)
+    (2, 255, 88)    -> (31, 223, 95)
+    (230, 230, 12)  -> (223, 223, 31)
+    (140, 190, 40)  -> (159, 159, 31)
+    """
+    
+    isCorrect = True
+    img = create_image(1, 5)
+    
+    set_color(img, 0, 0,  create_color(67, 190, 0))
+    set_color(img, 0, 1,  create_color(128, 143, 222))
+    set_color(img, 0, 2,  create_color(2, 255, 88))
+    set_color(img, 0, 3,  create_color(230, 230, 12))
+    set_color(img, 0, 4,  create_color(140, 190, 40))
+    
+    expect = create_image(1, 5)
+    
+    set_color(expect, 0, 0,  create_color(95, 159, 31))
+    set_color(expect, 0, 1,  create_color(159, 159, 223))
+    set_color(expect, 0, 2,  create_color(31, 223, 95))
+    set_color(expect, 0, 3,  create_color(223, 223, 31))
+    set_color(expect, 0, 4,  create_color(159, 159, 31))
+    
+    actual = posterize(img)
+    
+    for x, y, colour1 in expect:
+        colour2 = get_color(actual, x, y)
+        if (colour1 != colour2):
+            isCorrect = False
+            print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
+    
+    return isCorrect
+
+def test_adjust():
+    values = (255, 12, 100, 170) 
+    expect = (223, 31, 95, 159)
+    
+    actual = (_adjust_component(values[0]), _adjust_component(values[1]), _adjust_component(values[2]), _adjust_component(values[3]))
+    
+    if actual == expect:
+        return True
+    else:
+        return False
+    
