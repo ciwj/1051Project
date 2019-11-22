@@ -1,9 +1,12 @@
 from Cimpl import *
 from L4_6_P4_posterize import posterize, _adjust_component
 
+
 def test_posterize():
     """
-    Tests the posterize() function. Returns True if it passes, returns False otherwise.
+    Tests the posterize() function.
+    Returns True if it passes.
+    Returns False otherwise.
     Created by Callum Ullrich.
     Student # 101148042, Group L4-6
     >>>test_posterize()
@@ -44,6 +47,7 @@ def test_posterize():
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
     
     return isCorrect
+
 
 def test_adjust():
     """
