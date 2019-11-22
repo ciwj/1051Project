@@ -1,3 +1,7 @@
+from Cimpl import *
+from L4_6_P4_posterize import posterize
+
+
 def posterize_test(image):
     """Tests image to see if image is posterized. Parameter should be posterize_test(posterize(load_image(choose_file()))) in order to select a posterized image. Prints "passed" if test passed and "failed" if test failed. Created by Callum Ullrich.
     """
@@ -30,8 +34,5 @@ def posterize_test(image):
         if b >= 128 and b <= 191 and b != 159:
             chillin = False         
         if b >= 192 and b <= 255 and b != 223:
-            chillin = False           
-    if chillin == True:
-        print ("passed")
-    if chillin == False:
-        print ("failed")
+            chillin = False
+        return chillin
