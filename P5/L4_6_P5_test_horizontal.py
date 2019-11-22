@@ -32,11 +32,11 @@ def test_flip_horizontal():
     
     expect = create_image(1, 5)
     
-    set_color(img, 0, 0,  create_color(255, 0, 0))
-    set_color(img, 0, 1,  create_color(0, 255, 0))
-    set_color(img, 0, 2,  create_color(255, 255, 255))
-    set_color(img, 0, 3,  create_color(128, 128, 128))
-    set_color(img, 0, 4,  create_color(0, 0, 0))
+    set_color(expect, 0, 0,  create_color(255, 0, 0))
+    set_color(expect, 0, 1,  create_color(0, 255, 0))
+    set_color(expect, 0, 2,  create_color(255, 255, 255))
+    set_color(expect, 0, 3,  create_color(128, 128, 128))
+    set_color(expect, 0, 4,  create_color(0, 0, 0))
     
     actual = flip_horizontal(img)
     
