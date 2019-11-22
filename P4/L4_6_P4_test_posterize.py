@@ -46,6 +46,17 @@ def test_posterize():
     return isCorrect
 
 def test_adjust():
+    """
+    Tests the _adjust_component() function. Returns True if it passes, returns False otherwise.
+    Created by Callum Ullrich.
+    Student # 101148042, Group L4-6
+    >>>test_adjust()
+    True
+    >>>test_adjust()
+    False
+    Cases:
+    (255, 12, 100, 170) -> (223, 31, 95, 159)
+    """    
     values = (255, 12, 100, 170) 
     expect = (223, 31, 95, 159)
     
