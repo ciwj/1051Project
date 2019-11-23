@@ -25,14 +25,14 @@ def test_red():
     (255, 0, 0)     -> (255, 0, 0)
     """
     is_correct = True
-    img = create_image(5, 1)
+    img = create_image(5, 1) #Creates an image with the following colours
     set_color(img, 0, 0,  create_color(0, 0, 0))
     set_color(img, 1, 0,  create_color(128, 128, 128))
     set_color(img, 2, 0,  create_color(255, 255, 255))
     set_color(img, 3, 0,  create_color(0, 255, 0))
     set_color(img, 4, 0,  create_color(255, 0, 0))
     
-    expect = create_image(5, 1)
+    expect = create_image(5, 1) #Creates an image with the following colours
     set_color(expect, 0, 0,  create_color(0, 0, 0))
     set_color(expect, 1, 0,  create_color(128, 0, 0))
     set_color(expect, 2, 0,  create_color(255, 0, 0))
@@ -41,7 +41,7 @@ def test_red():
     
     actual = red_channel(img)
     
-    for x, y, colour1 in expect:
+    for x, y, colour1 in expect: #checks if the coulours are what they should be after the filter has run
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
             is_correct = False
