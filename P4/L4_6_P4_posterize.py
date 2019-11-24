@@ -36,9 +36,12 @@ def posterize(oldImage):
     >>> posterized_img = posterize(img)
     """
     image = copy(oldImage)
+    
+    #Go through every pixel, set colour to the result from _adjust_component
     for pixel in image:
         x, y, (r, g, b) = pixel
         colour = create_color(_adjust_component(r), _adjust_component(g), _adjust_component(b))
         set_color(image, x, y, colour)
+    
     show(image)
     return image
