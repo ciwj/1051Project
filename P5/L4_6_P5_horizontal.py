@@ -4,7 +4,7 @@ from Cimpl import *
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
-def flip_horizontal(oldImage: Image):
+def flip_horizontal(oldImage: Image) -> Image:
     """
     Takes a Cimpl.Image object and returns another
     Cimpl.Image object with the image horizontally flipped.
@@ -15,6 +15,7 @@ def flip_horizontal(oldImage: Image):
     """
     image = copy(oldImage)
     
+    #Sets pixel at (x, y) to the opposite x value
     for x, y, col in oldImage:
         set_color(image, x, get_height(image) - (y + 1),  col)
     
