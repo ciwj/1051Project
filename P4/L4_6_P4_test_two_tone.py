@@ -19,8 +19,9 @@ def test_two_tone():
     (200, 90, 140) -> (255, 255, 255)
     """
     
-    isCorrect = True
+    is_correct = True
     
+    #Creates before & expected img
     img = create_image(4, 1)
     set_color(img, 0, 0,  create_color(0, 0, 0))
     set_color(img, 1, 0,  create_color(128, 128, 128))
@@ -35,9 +36,10 @@ def test_two_tone():
     
     actual = two_tone(img, "black", "white")
     
+    #Compares expected to actual img
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
-            isCorrect = False
+            is_correct = False
     
-    return isCorrect
+    return is_correct
