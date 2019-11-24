@@ -27,6 +27,7 @@ def _adjust_component(comp: int) -> int:
     else:
         return 223
 
+
 def posterize(oldImage):
     """
     Takes an image and posterizes it, with the quadrants being:
