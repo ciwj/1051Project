@@ -4,7 +4,8 @@ from L4_6_P2_combine import combine
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
-def test_combine()-> Image:
+
+def test_combine()-> bool:
     """
     Tests the combine() function.
     Returns True if passed, False otherwise.
@@ -20,13 +21,14 @@ def test_combine()-> Image:
     (255, 0, 0) + (0, 255, 0) + (0, 0, 255) -> (255, 255, 255)
     (0, 0, 0) + (0, 0, 0) + (0, 0, 0) -> (0, 0, 0)
     """
-    isCorrect = True
+    is_correct = True
     
     img1 = create_image(4, 1)#Creates an image
     img2 = create_image(4, 1)#Creates an image
     img3 = create_image(4, 1)#Creates an image
     expect = create_image(4, 1)#Creates an image
     
+    #Adds pixels
     set_color(img1, 0, 0,  create_color(255, 0, 0))
     set_color(img1, 1, 0,  create_color(120, 0, 0))
     set_color(img1, 2, 0,  create_color(255, 0, 0))
@@ -46,10 +48,11 @@ def test_combine()-> Image:
     
     actual = combine(img1, img2, img3)
     
+    #Compares expected to actual
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
             is_correct = False
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)    
     
-    return isCorrect
+    return is_correct
