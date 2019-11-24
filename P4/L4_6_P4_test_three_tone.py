@@ -19,6 +19,7 @@ def test_three_tone():
     (0, 200, 127) -> (255, 0, 0)
     """
     
+    #Creates before & expected img
     img = create_image(4, 1)
     set_color(img, 0, 0,  create_color(0, 0, 0))
     set_color(img, 1, 0,  create_color(128, 0, 255))
@@ -33,6 +34,7 @@ def test_three_tone():
     
     actual = three_tone(img, "white", "black", "red")
     
+    #Compares expected to actual
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
