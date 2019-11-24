@@ -3,6 +3,7 @@ from Cimpl import *
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
+
 def red_channel(oldImage: Image) -> Image:
     """
     Takes an image, and sets the green and blue channels to 0.
@@ -20,6 +21,5 @@ def red_channel(oldImage: Image) -> Image:
         newColor = create_color(r, 0, 0)
         set_color(image, x, y, newColor)
     
-    show(oldImage) #Show's the original image
     show(image) #Show's the filtered image
     return image
