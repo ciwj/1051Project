@@ -4,7 +4,8 @@ from L4_6_P2_red import red_channel
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
 
-def test_red():
+
+def test_red() -> bool:
     """
     Tests the red_channel function.
     Takes an image and returns True if the green and blue channels aren't
