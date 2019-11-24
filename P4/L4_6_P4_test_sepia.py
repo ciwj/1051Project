@@ -5,7 +5,7 @@ from L4_6_P4_sepia import sepia
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
-def test_sepia():
+def test_sepia() -> bool:
     """
     Tests the sepia() filter. Returns True if it passes, False if otherwise.
     Created by Zeyad Bakr.
@@ -15,13 +15,15 @@ def test_sepia():
     (128, 128, 128) -> (147, 128, 109)
     (200, 200, 200) -> (216, 200, 186)
     """
-    isCorrect = True
+    is_correct = True
     
+    #Creates before img
     img = create_image(3, 1)
     set_color(img, 0, 0,  create_color(0, 0, 0))
     set_color(img, 1, 0,  create_color(128, 128, 128))
     set_color(img, 2, 0,  create_color(200, 200, 200))
     
+    #Creates expected img
     expect = create_image(3, 1)
     set_color(expect, 0, 0,  create_color(0, 0, 0))
     set_color(expect, 1, 0,  create_color(147, 128, 108))
@@ -29,10 +31,11 @@ def test_sepia():
     
     actual = sepia(img)
     
+    #Compares pixels
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
-            isCorrect = False
+            is_correct = False
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
     
-    return isCorrect
+    return is_correct
