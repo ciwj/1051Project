@@ -16,7 +16,7 @@ def test_extreme_contrast(new_image: Image) ->Image:
     for x, y, ( r, g, b) in new_image:
         red = (r == 0 or r == 255)
         green = (g == 0 or g == 255)
-        blue = ( b== 0 or b == 255)
+        blue = ( b == 0 or b == 255)
         if not (red and green and blue):
             test = False
     if test == True:
