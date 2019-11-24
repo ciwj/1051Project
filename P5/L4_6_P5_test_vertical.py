@@ -5,7 +5,7 @@ from L4_6_P5_vertical import flip_vertical
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
-def test_vertical():
+def test_vertical() -> bool:
     """
     Tests the flip_vertical() function.
     Returns True if passed, False if failed.
@@ -24,6 +24,8 @@ def test_vertical():
     """
     
     is_correct = True
+    
+    #Creates test and expected image
     img = create_image(5, 1)
     
     set_color(img, 0, 0,  create_color(0, 0, 0))
@@ -42,6 +44,7 @@ def test_vertical():
     
     actual = flip_vertical(img)
     
+    #Compares actual and expected pixels
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
