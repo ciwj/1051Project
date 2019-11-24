@@ -5,7 +5,7 @@ from L4_6_P5_edge import detect_edges
 # Submitted 20/11/19, created by Zeyad Bakr.
 
 
-def test_edge():
+def test_edge() -> bool:
     """
     Tests the edge_detection() function.
     Returns True if it passes, False otherwise.
@@ -22,7 +22,9 @@ def test_edge():
     (124, 132, 122) + (0, 66, 0)      -> (0, 0, 0), (255, 255, 255)
     """
     
-    isCorrect = True
+    is_correct = True
+    
+    #Creates test and expected image
     img = create_image(3, 2)
     
     set_color(img, 0, 0,  create_color(0, 0, 0))
@@ -43,10 +45,11 @@ def test_edge():
     
     actual = detect_edges(img, 128)
     
+    #Compares actual and expected pixels
     for x, y, colour1 in expect:
         colour2 = get_color(actual, x, y)
         if (colour1 != colour2):
-            isCorrect = False
+            is_correct = False
             print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
     
-    return isCorrect
+    return is_correct
