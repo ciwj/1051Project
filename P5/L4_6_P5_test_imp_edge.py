@@ -6,12 +6,12 @@ from L4_6_P5_imp_edge import *
 #Submitted 20/11/19, created by Navin Kangal
 
 
-
 def test_imp_edge():
     """
     By: Navin Kangal
     Student#: 101140794
     The function test the pixels in detect_edges_better to see if they are correct.
+    
     Cases:
     detect_edges_better(image, 200)
     
@@ -35,7 +35,6 @@ def test_imp_edge():
     set_color(img, 2, 1,  create_color(94, 213, 130))
     set_color(img, 3, 1,  create_color(0, 0, 0))
     
-    
     expect = create_image(4, 2)
     
     set_color(expect, 0, 0,  create_color(255, 255, 255))
@@ -53,6 +52,6 @@ def test_imp_edge():
         colour2 = get_color(img, x, y)
         if (colour1 != colour2):
             isCorrect = False
-            print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1) 
+            print('Pixel failed: ', (x, y), 'is', colour2, 'not', colour1)
             
         return isCorrect
