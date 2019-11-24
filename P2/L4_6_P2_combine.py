@@ -1,7 +1,8 @@
-from Cimpl import *
+no defrom Cimpl import *
 
 # Milestone 2, P5. Group L4-6.
 # Submitted 20/11/19, created by Zeyad Bakr.
+
 
 def combine(image1: Image, image2: Image, image3: Image) ->Image:
     """
