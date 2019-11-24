@@ -4,11 +4,15 @@ import math
 #Milestone 2, P5. Group L4-6
 #Submitted 20/11/19, created by Navin Kangal
 
+
 def detect_edges(oldImage: Image, threshold: int):
     """
     By: Navin Kangal
     Student#: 101140794
-    The function determines the contrast between a pixel and the pixel below it. If the contrrast is greater than the threshold set by the user the pixel turns black. If it is lower it turns white.
+    The function determines the contrast between
+    a pixel and the pixel below it. If the contrrast
+    is greater than the threshold set by the user the
+    pixel turns black. If it is lower it turns white.
     """
     image = create_image(get_width(oldImage), get_height(oldImage) + 1)
     
