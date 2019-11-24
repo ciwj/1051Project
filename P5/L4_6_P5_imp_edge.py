@@ -15,19 +15,23 @@ def detect_edges_better(oldImage: Image, threshold: int):
     >>> img1 = detect_edges_better(img, 200)
     >>> img2 = detect_edges_better(img, 100)
     """
-    image = create_image(get_width(oldImage) + 1, get_height(oldImage) + 1)
+    image = create_image(get_width(oldImage) + 1, get_height(oldImage) + 1) #Pads image
+    image2 = copy(oldImage)
     
     black = create_color(0, 0, 0)
     white = create_color(255, 255, 255)
     
+    #Copy image over
     for x, y, col in oldImage:
         set_color(image, x, y,  col)
     
+    #Make image grayscale
     for x, y, (r, g, b) in image:
         brightness = (r + g + b) / 3
         brightPixel = create_color(brightness, brightness, brightness)
         set_color(image, x, y, brightPixel)
     
+    #Tests for contrast and sets colour accordingly
     for x in range(get_width(oldImage)):
         for y in range(get_height(oldImage)):
             r2, g2, b2 = get_color(image, x, y + 1)
@@ -38,9 +42,9 @@ def detect_edges_better(oldImage: Image, threshold: int):
             diffDown = abs(brightness - brightnessDown)
             diffRight = abs(brightness - brightnessRight)
             if (diffRight > threshold) or (diffDown > threshold):
-                set_color(oldImage, x, y, black)
+                set_color(image2, x, y, black)
             else:
-                set_color(oldImage, x, y, white)
+                set_color(image2, x, y, white)
     
-    show(oldImage)
-    return oldImage
+    show(image2)
+    return image2
