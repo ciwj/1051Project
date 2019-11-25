@@ -37,6 +37,7 @@ def xtreme_contrast():
     newImage = extreme_contrast(image)
     return True, True, newImage
 
+
 def tint_sepia():
     newImage = sepia(image)
     return True, True, newImage
@@ -48,22 +49,25 @@ def posterized_img():
 
 
 def two_toned_img():
-    colour1 = input("Input colour 1: ")
-    colour2 = input("Input colour 2: ")
+    colour1 = "yellow"
+    colour2 = "cyan"
     newImage = two_tone(image, colour1, colour2)
     return True, True, newImage
 
+
 def three_toned_img():
-    colour1 = input("Input colour 1: ")
-    colour2 = input("Input colour 2: ")
-    colour3 = input("Input colour 3: ")
-    newImage = three_tone(image, colour1, colour2, colour3)    
+    colour1 = "yellow"
+    colour2 = "magenta"
+    colour3 = "cyan"
+    newImage = three_tone(image, colour1, colour2, colour3)
     return True, True, newImage
+
 
 def edge():
     thres = int(input("Input threshold: "))
     newImage = detect_edges(image, thres)
     return True, True, newImage
+
 
 def imp_edge():
     thres = int(input("Input threshold: "))
