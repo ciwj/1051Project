@@ -1,5 +1,5 @@
 
-YeeEditor v1.0		Completed 29/11/19
+YeeFilters v1.0		Completed 29/11/19
 ---------------------------------------------
 
 Pricing: $69.00
