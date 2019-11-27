@@ -2,7 +2,7 @@ import math
 from Cimpl import show, get_color, set_color, create_color, copy, Image, get_height, get_width, create_image
 
 # Milestone 2, P5. Group L4-6.
-# Submitted 24/11/19
+# Submitted 27/11/19. Created by Zeyad Bakr, Callum Ullrich and Navin Kangal.
 
 
 def combine(image1: Image, image2: Image, image3: Image) -> Image:
@@ -325,18 +325,18 @@ def detect_edges(oldImage: Image, threshold: int):
     pixel turns black. If it is lower it turns white.
     """
     image = create_image(get_width(oldImage), get_height(oldImage) + 1)
-
+    
     black = create_color(0, 0, 0)
     white = create_color(255, 255, 255)
-
+    
     for x, y, col in oldImage:
         set_color(image, x, y, col)
-
+    
     for x, y, (r, g, b) in image:
         brightness = (r + g + b) / 3
         brightPixel = create_color(brightness, brightness, brightness)
         set_color(image, x, y, brightPixel)
-
+    
     for x in range(get_width(oldImage)):
         for y in range(get_height(oldImage)):
             r2, g2, b2 = get_color(image, x, y + 1)
