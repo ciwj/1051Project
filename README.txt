@@ -13,7 +13,9 @@ that come with YeeFilters are red, green, blue,
 combine, extreme contrast, posterize, sepia,
 two tone, and three tone filters.
 
-When installing YeeFilters 
+When installing YeeFilters download the filter
+files, cimpl file, and ui files into the same
+folder then run the ui.
 
 Usage
 
