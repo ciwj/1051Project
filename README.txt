@@ -6,9 +6,9 @@ Pricing: $69.00
 
 For help contact: zeyadbakr@cmail.carleton.ca
 
-Description
+YeeFilters is a downloadable program from the intenet which allows the user to filter images at will with 8 different filters. The filters that come with YeeFilters are red, green, blue, 
 
-Installation
+When installing YeeFilters 
 
 Usage
 
